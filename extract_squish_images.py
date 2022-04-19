@@ -21,6 +21,10 @@ def main() -> int:
 
 
     for subdir, dirs, files in os.walk(input_dir):
+        if subdir == output_dir:
+            #print("skip output_dir")
+            continue
+
         destination_dir = output_dir
         destination_dir = os.path.join(destination_dir, subdir[len(input_dir):])
 
@@ -30,7 +34,11 @@ def main() -> int:
 
         for file in files:
             cur_file = os.path.join(subdir, file)
-            xml_tree = ET.parse(cur_file)
+            try:
+                xml_tree = ET.parse(cur_file)
+            except:
+                continue
+
             xml_root = xml_tree.getroot()
             for child in xml_root:
                 if child.tag != "Verification":
