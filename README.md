@@ -7,3 +7,4 @@ path under input folder)
 
 Expected two inputs: {input dir} {output dir} 
 # test line 1
+# test line 2
