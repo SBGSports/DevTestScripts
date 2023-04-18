@@ -6,3 +6,4 @@ given an input folder, find all the squish verification point xmls, parse out th
 path under input folder) 
 
 Expected two inputs: {input dir} {output dir} 
+# test line
